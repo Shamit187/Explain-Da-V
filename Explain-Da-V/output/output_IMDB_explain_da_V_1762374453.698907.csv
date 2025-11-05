@@ -1,0 +1,445 @@
+,problem_set,orientation,direction,target,solution,validity,generalizability,explainability_size,explainabilty_repeated_terms,explainabilty_cognitive_chunks,time_to_generate
+0,0,Columns,Addition,6(Number_of_genres),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,0,Columns,Addition,6(Number_of_genres),"(all_numeric) transform(IMDB_Rating):
+  if IMDB_Rating <= 7.8500001430511475:
+    if IMDB_Rating <= 7.6499998569488525:
+      new value: 0
+    else (IMDB_Rating > 7.6499998569488525): 
+      if IMDB_Rating <= 7.75:
+        new value: 0
+      else (IMDB_Rating > 7.75): 
+        new value: 0
+  else (IMDB_Rating > 7.8500001430511475): 
+    if IMDB_Rating <= 8.75:
+      if IMDB_Rating <= 8.449999809265137:
+        if IMDB_Rating <= 8.349999904632568:
+          if IMDB_Rating <= 7.950000047683716:
+            new value: 0
+          else (IMDB_Rating > 7.950000047683716): 
+            if IMDB_Rating <= 8.050000190734863:
+              new value: 0
+            else (IMDB_Rating > 8.050000190734863): 
+              if IMDB_Rating <= 8.25:
+                if IMDB_Rating <= 8.150000095367432:
+                  new value: 0
+                else (IMDB_Rating > 8.150000095367432): 
+                  new value: 0
+              else (IMDB_Rating > 8.25): 
+                new value: 0
+        else (IMDB_Rating > 8.349999904632568): 
+          new value: 1
+      else (IMDB_Rating > 8.449999809265137): 
+        if IMDB_Rating <= 8.650000095367432:
+          if IMDB_Rating <= 8.550000190734863:
+            new value: 0
+          else (IMDB_Rating > 8.550000190734863): 
+            new value: 0
+        else (IMDB_Rating > 8.650000095367432): 
+          new value: 0
+    else (IMDB_Rating > 8.75): 
+      if IMDB_Rating <= 9.25:
+        if IMDB_Rating <= 8.849999904632568:
+          new value: 2
+        else (IMDB_Rating > 8.849999904632568): 
+          if IMDB_Rating <= 8.949999809265137:
+            new value: 0
+          else (IMDB_Rating > 8.949999809265137): 
+            if IMDB_Rating <= 9.099999904632568:
+              new value: 1
+            else (IMDB_Rating > 9.099999904632568): 
+              new value: 1
+      else (IMDB_Rating > 9.25): 
+        new value: 2
+",0.65125,0.625,33.0,1.0,16.0,0.002172231674194336
+2,0,Columns,Addition,6(Number_of_genres),(all_numeric) (no extensions)y = -1.161 + 0.204 * IMDB_Rating,0.007134487496649022,0.0,2.0,0.0,1.0,0.002444028854370117
+3,0,Columns,Addition,6(Number_of_genres),(all_numeric) y = -0.341 + 0.013 * IMDB_Rating^2,0.007223512699812806,0.0,2.0,0.0,3.0,0.002232074737548828
+4,0,Columns,Addition,6(Number_of_genres),(all_numeric) y = -0.067 + 0.001 * IMDB_Rating^3,0.007314513138550027,0.0,2.0,0.0,4.0,0.001809835433959961
+5,0,Columns,Addition,6(Number_of_genres),(all_numeric) y = -1.161 + 0.204 * IMDB_Rating,0.007134487496649022,0.0,2.0,0.0,1.0,0.002835988998413086
+6,0,Columns,Addition,6(Number_of_genres),(all_numeric) y = 0.282 + ε * exp(IMDB_Rating),0.007973986532202382,0.0,2.0,1.0,3.0,0.001940011978149414
+7,0,Columns,Addition,6(Number_of_genres),(all_textual) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+0,0,Columns,Addition,7(Title_len),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,0,Columns,Addition,7(Title_len),(all_numeric) (no extensions)y = 15.535,0.0,0.0,1.0,0.0,1.0,0.0014040470123291016
+2,0,Columns,Addition,7(Title_len),(all_numeric) y = 15.535,0.0,0.0,1.0,0.0,1.0,0.002068042755126953
+3,0,Columns,Addition,7(Title_len),(all_textual) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+0,0,Columns,Addition,8(IMDB_Rating_power_2_plus_price),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,0,Columns,Addition,8(IMDB_Rating_power_2_plus_price),(all_numeric) (no extensions)y = -65.558 + 17.206 * IMDB_Rating,0.9993499496338729,0.9995516876438,2.0,0.0,1.0,0.0014557838439941406
+2,0,Columns,Addition,8(IMDB_Rating_power_2_plus_price),(all_numeric) y = 0.000 + 1.000 * IMDB_Rating + 1.000 * IMDB_Rating^2,1.0,1.0,3.0,0.0,3.0,0.0016748905181884766
+3,0,Columns,Addition,8(IMDB_Rating_power_2_plus_price),(all_numeric) y = 2.738 + 1.122 * IMDB_Rating^2 + -0.005 * IMDB_Rating^3,0.9999999965838787,0.9999999971866459,3.0,0.0,4.0,0.002112150192260742
+4,0,Columns,Addition,8(IMDB_Rating_power_2_plus_price),(all_numeric) y = -65.558 + 17.206 * IMDB_Rating,0.9993499496338728,0.9995516876438001,2.0,0.0,1.0,0.004445075988769531
+5,0,Columns,Addition,8(IMDB_Rating_power_2_plus_price),(all_numeric) y = 57.308 + 30.562 * IMDB_Rating + -110.643 * log(IMDB_Rating) + ε * exp(IMDB_Rating),0.9999999851555229,0.9999999879873678,4.0,1.0,4.0,0.0018239021301269531
+6,0,Columns,Addition,8(IMDB_Rating_power_2_plus_price),(all_textual) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+0,0,Columns,Addition,9(log_Rating),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,0,Columns,Addition,9(log_Rating),(all_numeric) (no extensions)y = 1.090 + 0.124 * IMDB_Rating,0.9993088014166169,0.9995198794196762,2.0,0.0,1.0,0.0014908313751220703
+2,0,Columns,Addition,9(log_Rating),(all_numeric) y = 0.605 + 0.244 * IMDB_Rating + -0.007 * IMDB_Rating^2,0.9999990584889922,0.99999925727518,3.0,0.0,3.0,0.0022249221801757812
+3,0,Columns,Addition,9(log_Rating),(all_numeric) y = 1.272 + 0.022 * IMDB_Rating^2 + -0.001 * IMDB_Rating^3,0.9999912928453346,0.9999930176481373,3.0,0.0,4.0,0.002203226089477539
+4,0,Columns,Addition,9(log_Rating),(all_numeric) y = 1.090 + 0.124 * IMDB_Rating,0.9993088014166169,0.9995198794196761,2.0,0.0,1.0,0.0022430419921875
+5,0,Columns,Addition,9(log_Rating),(all_numeric) y = 1.001 + 0.136 * IMDB_Rating + ε * exp(IMDB_Rating),0.9999724051065493,0.9999770618625912,3.0,1.0,3.0,0.002836942672729492
+6,0,Columns,Addition,9(log_Rating),(all_textual) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+0,0,Columns,Addition,10(1_div_Rating),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,0,Columns,Addition,10(1_div_Rating),(all_numeric) (no extensions)y = 0.248 + -0.015 * IMDB_Rating,0.9973181756159246,0.9981293058274493,2.0,0.0,1.0,0.001459360122680664
+2,0,Columns,Addition,10(1_div_Rating),(all_numeric) y = 0.366 + -0.045 * IMDB_Rating + 0.002 * IMDB_Rating^2,0.9999919096247933,0.9999936508727101,3.0,0.0,3.0,0.002206087112426758
+3,0,Columns,Addition,10(1_div_Rating),(all_numeric) y = 0.244 + -0.004 * IMDB_Rating^2 + 0.000 * IMDB_Rating^3,0.9999667544823012,0.9999734870332401,3.0,0.0,4.0,0.002187013626098633
+4,0,Columns,Addition,10(1_div_Rating),(all_numeric) y = 0.248 + -0.015 * IMDB_Rating,0.9973181756159246,0.9981293058274492,2.0,0.0,1.0,0.0020580291748046875
+5,0,Columns,Addition,10(1_div_Rating),(all_numeric) y = 0.269 + -0.018 * IMDB_Rating + ε * exp(IMDB_Rating),0.9998734565780943,0.9998953752762796,3.0,1.0,3.0,0.0021610260009765625
+6,0,Columns,Addition,10(1_div_Rating),(all_textual) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+0,0,Columns,Addition,11(sqrt_Rating),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,0,Columns,Addition,11(sqrt_Rating),(all_numeric) (no extensions)y = 1.422 + 0.176 * IMDB_Rating,0.9998246014560829,0.9998783855074523,2.0,0.0,1.0,0.001463174819946289
+2,0,Columns,Addition,11(sqrt_Rating),(all_numeric) y = 1.074 + 0.262 * IMDB_Rating + -0.005 * IMDB_Rating^2,0.9999998645755995,0.9999998928381167,3.0,0.0,3.0,0.0023369789123535156
+3,0,Columns,Addition,11(sqrt_Rating),(all_numeric) y = 1.791 + 0.026 * IMDB_Rating^2 + -0.001 * IMDB_Rating^3,0.9999965206691852,0.9999972007952881,3.0,0.0,4.0,0.0022039413452148438
+4,0,Columns,Addition,11(sqrt_Rating),(all_numeric) y = 1.422 + 0.176 * IMDB_Rating,0.9998246014560829,0.9998783855074523,2.0,0.0,1.0,0.0022330284118652344
+5,0,Columns,Addition,11(sqrt_Rating),(all_numeric) y = 1.358 + 0.185 * IMDB_Rating + ε * exp(IMDB_Rating),0.9999936038504224,0.9999946666909106,3.0,1.0,3.0,0.0021588802337646484
+6,0,Columns,Addition,11(sqrt_Rating),(all_textual) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+0,0,Columns,Addition,12(exp_Rating),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,0,Columns,Addition,12(exp_Rating),(all_numeric) (no extensions)y = 0.248 + -0.015 * IMDB_Rating,0.9973181756159246,0.9981293058274493,2.0,0.0,1.0,0.0017049312591552734
+2,0,Columns,Addition,12(exp_Rating),(all_numeric) y = 0.366 + -0.045 * IMDB_Rating + 0.002 * IMDB_Rating^2,0.9999919096247933,0.9999936508727101,3.0,0.0,3.0,0.002088785171508789
+3,0,Columns,Addition,12(exp_Rating),(all_numeric) y = 0.244 + -0.004 * IMDB_Rating^2 + 0.000 * IMDB_Rating^3,0.9999667544823012,0.9999734870332401,3.0,0.0,4.0,0.0021550655364990234
+4,0,Columns,Addition,12(exp_Rating),(all_numeric) y = 0.248 + -0.015 * IMDB_Rating,0.9973181756159246,0.9981293058274492,2.0,0.0,1.0,0.002048969268798828
+5,0,Columns,Addition,12(exp_Rating),(all_numeric) y = 0.269 + -0.018 * IMDB_Rating + ε * exp(IMDB_Rating),0.9998734565780943,0.9998953752762796,3.0,1.0,3.0,0.002189159393310547
+6,0,Columns,Addition,12(exp_Rating),(all_textual) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+0,0,Columns,Addition,13(IMDB_Rating_norm_sum),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,0,Columns,Addition,13(IMDB_Rating_norm_sum),(all_numeric) (no extensions)y =  + 0.000 * IMDB_Rating,1.0,0.0,2.0,0.0,1.0,0.0015540122985839844
+2,0,Columns,Addition,13(IMDB_Rating_norm_sum),(all_numeric) y = 0.001 + ε * IMDB_Rating^2,0.9992673096982664,0.0,2.0,0.0,3.0,0.0015940666198730469
+3,0,Columns,Addition,13(IMDB_Rating_norm_sum),(all_numeric) y = 0.000 + ε * IMDB_Rating^2 + ε * IMDB_Rating^3,0.9999989880043216,0.0,3.0,0.0,4.0,0.0022149085998535156
+4,0,Columns,Addition,13(IMDB_Rating_norm_sum),(all_numeric) y =  + 0.000 * IMDB_Rating,1.0,0.0,2.0,0.0,1.0,0.002028942108154297
+5,0,Columns,Addition,13(IMDB_Rating_norm_sum),(all_textual) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+0,0,Columns,Addition,14(IMDB_Rating_sub_mean),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,0,Columns,Addition,14(IMDB_Rating_sub_mean),(all_numeric) (no extensions)y = -7.953 + 1.000 * IMDB_Rating,1.0,0.9956884028297732,2.0,0.0,1.0,0.0015282630920410156
+2,0,Columns,Addition,14(IMDB_Rating_sub_mean),(all_numeric) y = -7.953 + 1.000 * IMDB_Rating,1.0,0.9956884028297733,2.0,1.0,2.0,0.001856088638305664
+3,0,Columns,Addition,14(IMDB_Rating_sub_mean),(all_numeric) y = -5.215 + 0.122 * IMDB_Rating^2 + -0.005 * IMDB_Rating^3,0.9999989880043213,0.9956928222354857,3.0,0.0,4.0,0.002246856689453125
+4,0,Columns,Addition,14(IMDB_Rating_sub_mean),(all_textual) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+0,0,Columns,Addition,15(IMDB_Rating_norm_minmax),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,0,Columns,Addition,15(IMDB_Rating_norm_minmax),(all_numeric) (no extensions)y = -4.471 + 0.588 * IMDB_Rating,1.0,0.7611472188144094,2.0,0.0,1.0,0.0015411376953125
+2,0,Columns,Addition,15(IMDB_Rating_norm_minmax),(all_numeric) y = -4.471 + 0.588 * IMDB_Rating,1.0,0.7611472188144023,2.0,1.0,2.0,0.0018558502197265625
+3,0,Columns,Addition,15(IMDB_Rating_norm_minmax),(all_numeric) y = -2.860 + 0.071 * IMDB_Rating^2 + -0.003 * IMDB_Rating^3,0.9999989880043213,0.7612325054441365,3.0,0.0,4.0,0.002257108688354492
+4,0,Columns,Addition,15(IMDB_Rating_norm_minmax),(all_textual) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+0,0,Columns,Addition,16(is_top_movie),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,0,Columns,Addition,16(is_top_movie),"(all_numeric) transform(IMDB_Rating):
+  if IMDB_Rating <= 9.099999904632568:
+    new value: 0
+  else (IMDB_Rating > 9.099999904632568): 
+    new value: 1
+",1.0,1.0,3.0,1.0,1.0,0.0012180805206298828
+2,0,Columns,Addition,16(is_top_movie),(all_numeric) (no extensions)y = -0.325 + 0.041 * IMDB_Rating,0.05360699319818962,0.0,2.0,0.0,1.0,0.0021190643310546875
+3,0,Columns,Addition,16(is_top_movie),(all_numeric) y = 12.834 + -3.212 * IMDB_Rating + 0.201 * IMDB_Rating^2,0.2984463694182832,0.0,3.0,0.0,3.0,0.002290010452270508
+4,0,Columns,Addition,16(is_top_movie),(all_numeric) y = -268.966 + 99.785 * IMDB_Rating + -12.327 * IMDB_Rating^2 + 0.507 * IMDB_Rating^3,0.6376857804904513,0.0,4.0,0.0,4.0,0.0018930435180664062
+5,0,Columns,Addition,16(is_top_movie),(all_numeric) y = -0.325 + 0.041 * IMDB_Rating,0.053606993198189845,0.0,2.0,0.0,1.0,0.0021708011627197266
+6,0,Columns,Addition,16(is_top_movie),(all_numeric) y = -141.801 + -20.033 * IMDB_Rating + 144.345 * log(IMDB_Rating) + 0.001 * exp(IMDB_Rating),0.6870853230632854,0.0,4.0,1.0,4.0,0.0019359588623046875
+7,0,Columns,Addition,16(is_top_movie),"(all_textual) t = Series_Title,Released_Year,Genre,Runtime,Overview
+t = f_number_of_words(t,4)
+",1.0,1.0,2.0,1.0,5.0,1.54414701461792
+0,0,Columns,Addition,17(Rating_on_1_to_2_scale),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,0,Columns,Addition,17(Rating_on_1_to_2_scale),"(all_numeric) transform(IMDB_Rating):
+  if IMDB_Rating <= 7.950000047683716:
+    new value: 1
+  else (IMDB_Rating > 7.950000047683716): 
+    new value: 0
+",1.0,0.0,3.0,1.0,1.0,0.0012679100036621094
+2,0,Columns,Addition,17(Rating_on_1_to_2_scale),(all_numeric) (no extensions)y = 11.755 + -1.411 * IMDB_Rating,0.6296980516287767,0.0,2.0,0.0,1.0,0.002375364303588867
+3,0,Columns,Addition,17(Rating_on_1_to_2_scale),(all_numeric) y = 99.315 + -23.056 * IMDB_Rating + 1.336 * IMDB_Rating^2,0.7383606287487923,0.0,3.0,0.0,3.0,0.002397775650024414
+4,0,Columns,Addition,17(Rating_on_1_to_2_scale),(all_numeric) y = 36.393 + -1.476 * IMDB_Rating^2 + 0.114 * IMDB_Rating^3,0.7399346965489068,0.0,3.0,0.0,4.0,0.0028820037841796875
+5,0,Columns,Addition,17(Rating_on_1_to_2_scale),(all_numeric) y = 11.755 + -1.411 * IMDB_Rating,0.6296980516287769,0.0,2.0,0.0,1.0,0.0020983219146728516
+6,0,Columns,Addition,17(Rating_on_1_to_2_scale),(all_numeric) y = 28.283 + -3.739 * IMDB_Rating + 0.001 * exp(IMDB_Rating),0.7393821280525028,0.0,3.0,1.0,3.0,0.002808094024658203
+7,0,Columns,Addition,17(Rating_on_1_to_2_scale),(all_textual) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+0,1,Columns,Addition,6(IMDB_Rating_power_2_plus_IMDB_Rating),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,1,Columns,Addition,6(IMDB_Rating_power_2_plus_IMDB_Rating),(all_numeric) (no extensions)y = -65.558 + 17.206 * IMDB_Rating,0.9993499496338729,0.9995516876438,2.0,0.0,1.0,0.0016252994537353516
+2,1,Columns,Addition,6(IMDB_Rating_power_2_plus_IMDB_Rating),(all_numeric) y = 0.000 + 1.000 * IMDB_Rating + 1.000 * IMDB_Rating^2,1.0,1.0,3.0,0.0,3.0,0.0017621517181396484
+3,1,Columns,Addition,6(IMDB_Rating_power_2_plus_IMDB_Rating),(all_numeric) y = 2.738 + 1.122 * IMDB_Rating^2 + -0.005 * IMDB_Rating^3,0.9999999965838787,0.9999999971866459,3.0,0.0,4.0,0.002237081527709961
+4,1,Columns,Addition,6(IMDB_Rating_power_2_plus_IMDB_Rating),(all_numeric) y = -65.558 + 17.206 * IMDB_Rating,0.9993499496338728,0.9995516876438001,2.0,0.0,1.0,0.0022504329681396484
+5,1,Columns,Addition,6(IMDB_Rating_power_2_plus_IMDB_Rating),(all_numeric) y = 57.308 + 30.562 * IMDB_Rating + -110.643 * log(IMDB_Rating) + ε * exp(IMDB_Rating),0.9999999851555229,0.9999999879873678,4.0,1.0,4.0,0.0019631385803222656
+6,1,Columns,Addition,6(IMDB_Rating_power_2_plus_IMDB_Rating),(all_textual) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+0,1,Columns,Addition,7(log_Rating),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,1,Columns,Addition,7(log_Rating),(all_numeric) (no extensions)y = 1.090 + 0.124 * IMDB_Rating,0.9993088014166169,0.9995198794196762,2.0,0.0,1.0,0.0015239715576171875
+2,1,Columns,Addition,7(log_Rating),(all_numeric) y = 0.605 + 0.244 * IMDB_Rating + -0.007 * IMDB_Rating^2,0.9999990584889922,0.99999925727518,3.0,0.0,3.0,0.0021779537200927734
+3,1,Columns,Addition,7(log_Rating),(all_numeric) y = 1.272 + 0.022 * IMDB_Rating^2 + -0.001 * IMDB_Rating^3,0.9999912928453346,0.9999930176481373,3.0,0.0,4.0,0.002579927444458008
+4,1,Columns,Addition,7(log_Rating),(all_numeric) y = 1.090 + 0.124 * IMDB_Rating,0.9993088014166169,0.9995198794196761,2.0,0.0,1.0,0.002140045166015625
+5,1,Columns,Addition,7(log_Rating),(all_numeric) y = 1.001 + 0.136 * IMDB_Rating + ε * exp(IMDB_Rating),0.9999724051065493,0.9999770618625912,3.0,1.0,3.0,0.0021889209747314453
+6,1,Columns,Addition,7(log_Rating),(all_textual) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+0,1,Columns,Addition,8(1_div_Rating),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,1,Columns,Addition,8(1_div_Rating),(all_numeric) (no extensions)y = 0.248 + -0.015 * IMDB_Rating,0.9973181756159246,0.9981293058274493,2.0,0.0,1.0,0.0015881061553955078
+2,1,Columns,Addition,8(1_div_Rating),(all_numeric) y = 0.366 + -0.045 * IMDB_Rating + 0.002 * IMDB_Rating^2,0.9999919096247933,0.9999936508727101,3.0,0.0,3.0,0.0023000240325927734
+3,1,Columns,Addition,8(1_div_Rating),(all_numeric) y = 0.244 + -0.004 * IMDB_Rating^2 + 0.000 * IMDB_Rating^3,0.9999667544823012,0.9999734870332401,3.0,0.0,4.0,0.0022559165954589844
+4,1,Columns,Addition,8(1_div_Rating),(all_numeric) y = 0.248 + -0.015 * IMDB_Rating,0.9973181756159246,0.9981293058274492,2.0,0.0,1.0,0.0020341873168945312
+5,1,Columns,Addition,8(1_div_Rating),(all_numeric) y = 0.269 + -0.018 * IMDB_Rating + ε * exp(IMDB_Rating),0.9998734565780943,0.9998953752762796,3.0,1.0,3.0,0.0022220611572265625
+6,1,Columns,Addition,8(1_div_Rating),(all_textual) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+0,1,Columns,Addition,9(sqrt_Rating),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,1,Columns,Addition,9(sqrt_Rating),(all_numeric) (no extensions)y = 1.422 + 0.176 * IMDB_Rating,0.9998246014560829,0.9998783855074523,2.0,0.0,1.0,0.001661062240600586
+2,1,Columns,Addition,9(sqrt_Rating),(all_numeric) y = 1.074 + 0.262 * IMDB_Rating + -0.005 * IMDB_Rating^2,0.9999998645755995,0.9999998928381167,3.0,0.0,3.0,0.0022649765014648438
+3,1,Columns,Addition,9(sqrt_Rating),(all_numeric) y = 1.791 + 0.026 * IMDB_Rating^2 + -0.001 * IMDB_Rating^3,0.9999965206691852,0.9999972007952881,3.0,0.0,4.0,0.0022652149200439453
+4,1,Columns,Addition,9(sqrt_Rating),(all_numeric) y = 1.422 + 0.176 * IMDB_Rating,0.9998246014560829,0.9998783855074523,2.0,0.0,1.0,0.0021970272064208984
+5,1,Columns,Addition,9(sqrt_Rating),(all_numeric) y = 1.358 + 0.185 * IMDB_Rating + ε * exp(IMDB_Rating),0.9999936038504224,0.9999946666909106,3.0,1.0,3.0,0.0022029876708984375
+6,1,Columns,Addition,9(sqrt_Rating),(all_textual) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+0,1,Columns,Addition,10(exp_Rating),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,1,Columns,Addition,10(exp_Rating),(all_numeric) (no extensions)y = 0.248 + -0.015 * IMDB_Rating,0.9973181756159246,0.9981293058274493,2.0,0.0,1.0,0.0014917850494384766
+2,1,Columns,Addition,10(exp_Rating),(all_numeric) y = 0.366 + -0.045 * IMDB_Rating + 0.002 * IMDB_Rating^2,0.9999919096247933,0.9999936508727101,3.0,0.0,3.0,0.002187967300415039
+3,1,Columns,Addition,10(exp_Rating),(all_numeric) y = 0.244 + -0.004 * IMDB_Rating^2 + 0.000 * IMDB_Rating^3,0.9999667544823012,0.9999734870332401,3.0,0.0,4.0,0.0022652149200439453
+4,1,Columns,Addition,10(exp_Rating),(all_numeric) y = 0.248 + -0.015 * IMDB_Rating,0.9973181756159246,0.9981293058274492,2.0,0.0,1.0,0.0021848678588867188
+5,1,Columns,Addition,10(exp_Rating),(all_numeric) y = 0.269 + -0.018 * IMDB_Rating + ε * exp(IMDB_Rating),0.9998734565780943,0.9998953752762796,3.0,1.0,3.0,0.002195119857788086
+6,1,Columns,Addition,10(exp_Rating),(all_textual) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+0,1,Columns,Addition,11(IMDB_Rating_norm_sum),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,1,Columns,Addition,11(IMDB_Rating_norm_sum),(all_numeric) (no extensions)y =  + 0.000 * IMDB_Rating,1.0,0.0,2.0,0.0,1.0,0.0015361309051513672
+2,1,Columns,Addition,11(IMDB_Rating_norm_sum),(all_numeric) y = 0.001 + ε * IMDB_Rating^2,0.9992673096982664,0.0,2.0,0.0,3.0,0.001718759536743164
+3,1,Columns,Addition,11(IMDB_Rating_norm_sum),(all_numeric) y = 0.000 + ε * IMDB_Rating^2 + ε * IMDB_Rating^3,0.9999989880043216,0.0,3.0,0.0,4.0,0.002328157424926758
+4,1,Columns,Addition,11(IMDB_Rating_norm_sum),(all_numeric) y =  + 0.000 * IMDB_Rating,1.0,0.0,2.0,0.0,1.0,0.002074003219604492
+5,1,Columns,Addition,11(IMDB_Rating_norm_sum),(all_textual) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+0,1,Columns,Addition,12(IMDB_Rating_sub_mean),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,1,Columns,Addition,12(IMDB_Rating_sub_mean),(all_numeric) (no extensions)y = -7.953 + 1.000 * IMDB_Rating,1.0,0.9956884028297732,2.0,0.0,1.0,0.0014841556549072266
+2,1,Columns,Addition,12(IMDB_Rating_sub_mean),(all_numeric) y = -7.953 + 1.000 * IMDB_Rating,1.0,0.9956884028297733,2.0,1.0,2.0,0.0018460750579833984
+3,1,Columns,Addition,12(IMDB_Rating_sub_mean),(all_numeric) y = -5.215 + 0.122 * IMDB_Rating^2 + -0.005 * IMDB_Rating^3,0.9999989880043213,0.9956928222354857,3.0,0.0,4.0,0.002257823944091797
+4,1,Columns,Addition,12(IMDB_Rating_sub_mean),(all_textual) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+0,1,Columns,Addition,13(IMDB_Rating_norm_minmax),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,1,Columns,Addition,13(IMDB_Rating_norm_minmax),(all_numeric) (no extensions)y = -4.471 + 0.588 * IMDB_Rating,1.0,0.7611472188144094,2.0,0.0,1.0,0.0015299320220947266
+2,1,Columns,Addition,13(IMDB_Rating_norm_minmax),(all_numeric) y = -4.471 + 0.588 * IMDB_Rating,1.0,0.7611472188144023,2.0,1.0,2.0,0.001974821090698242
+3,1,Columns,Addition,13(IMDB_Rating_norm_minmax),(all_numeric) y = -2.860 + 0.071 * IMDB_Rating^2 + -0.003 * IMDB_Rating^3,0.9999989880043213,0.7612325054441365,3.0,0.0,4.0,0.002285003662109375
+4,1,Columns,Addition,13(IMDB_Rating_norm_minmax),(all_textual) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+0,1,Columns,Addition,14(is_top_movie),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,1,Columns,Addition,14(is_top_movie),"(all_numeric) transform(IMDB_Rating):
+  if IMDB_Rating <= 9.099999904632568:
+    new value: 0
+  else (IMDB_Rating > 9.099999904632568): 
+    new value: 1
+",1.0,1.0,3.0,1.0,1.0,0.0012080669403076172
+2,1,Columns,Addition,14(is_top_movie),(all_numeric) (no extensions)y = -0.325 + 0.041 * IMDB_Rating,0.05360699319818962,0.0,2.0,0.0,1.0,0.001936197280883789
+3,1,Columns,Addition,14(is_top_movie),(all_numeric) y = 12.834 + -3.212 * IMDB_Rating + 0.201 * IMDB_Rating^2,0.2984463694182832,0.0,3.0,0.0,3.0,0.0024008750915527344
+4,1,Columns,Addition,14(is_top_movie),(all_numeric) y = -268.966 + 99.785 * IMDB_Rating + -12.327 * IMDB_Rating^2 + 0.507 * IMDB_Rating^3,0.6376857804904513,0.0,4.0,0.0,4.0,0.002363920211791992
+5,1,Columns,Addition,14(is_top_movie),(all_numeric) y = -0.325 + 0.041 * IMDB_Rating,0.053606993198189845,0.0,2.0,0.0,1.0,0.002331972122192383
+6,1,Columns,Addition,14(is_top_movie),(all_numeric) y = -141.801 + -20.033 * IMDB_Rating + 144.345 * log(IMDB_Rating) + 0.001 * exp(IMDB_Rating),0.6870853230632854,0.0,4.0,1.0,4.0,0.0023539066314697266
+7,1,Columns,Addition,14(is_top_movie),"(all_textual) t = Series_Title,Released_Year,Genre,Runtime,Overview
+t = f_number_of_words(t,4)
+",1.0,1.0,2.0,1.0,5.0,1.545302152633667
+0,1,Columns,Addition,15(Rating_on_1_to_2_scale),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,1,Columns,Addition,15(Rating_on_1_to_2_scale),"(all_numeric) transform(IMDB_Rating):
+  if IMDB_Rating <= 7.950000047683716:
+    new value: 1
+  else (IMDB_Rating > 7.950000047683716): 
+    new value: 0
+",1.0,0.0,3.0,1.0,1.0,0.0012600421905517578
+2,1,Columns,Addition,15(Rating_on_1_to_2_scale),(all_numeric) (no extensions)y = 11.755 + -1.411 * IMDB_Rating,0.6296980516287767,0.0,2.0,0.0,1.0,0.002185821533203125
+3,1,Columns,Addition,15(Rating_on_1_to_2_scale),(all_numeric) y = 99.315 + -23.056 * IMDB_Rating + 1.336 * IMDB_Rating^2,0.7383606287487923,0.0,3.0,0.0,3.0,0.0024466514587402344
+4,1,Columns,Addition,15(Rating_on_1_to_2_scale),(all_numeric) y = 36.393 + -1.476 * IMDB_Rating^2 + 0.114 * IMDB_Rating^3,0.7399346965489068,0.0,3.0,0.0,4.0,0.0028562545776367188
+5,1,Columns,Addition,15(Rating_on_1_to_2_scale),(all_numeric) y = 11.755 + -1.411 * IMDB_Rating,0.6296980516287769,0.0,2.0,0.0,1.0,0.0021948814392089844
+6,1,Columns,Addition,15(Rating_on_1_to_2_scale),(all_numeric) y = 28.283 + -3.739 * IMDB_Rating + 0.001 * exp(IMDB_Rating),0.7393821280525028,0.0,3.0,1.0,3.0,0.0027687549591064453
+7,1,Columns,Addition,15(Rating_on_1_to_2_scale),(all_textual) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+0,2,Columns,Addition,6(NUM_CHARACTERS(Overview)),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,2,Columns,Addition,6(NUM_CHARACTERS(Overview)),(all_numeric) (no extensions)y = 145.602,0.0,0.0,1.0,0.0,1.0,0.0015611648559570312
+2,2,Columns,Addition,6(NUM_CHARACTERS(Overview)),(all_numeric) y = 145.602,0.0,0.0,1.0,0.0,1.0,0.0020990371704101562
+3,2,Columns,Addition,6(NUM_CHARACTERS(Overview)),(all_numeric) y = 29222.909 + -10518.459 * IMDB_Rating + 1265.452 * IMDB_Rating^2 + -50.628 * IMDB_Rating^3,0.006377189418654283,0.0,4.0,0.0,4.0,0.0029621124267578125
+4,2,Columns,Addition,6(NUM_CHARACTERS(Overview)),(all_numeric) y = 18014.218 + 2400.823 * IMDB_Rating + -17746.389 * log(IMDB_Rating) + -0.059 * exp(IMDB_Rating),0.0066714275309713855,0.0,4.0,1.0,4.0,0.0031843185424804688
+5,2,Columns,Addition,6(NUM_CHARACTERS(Overview)),(all_textual) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+0,2,Columns,Addition,7(NUM_WORDS(Overview)),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,2,Columns,Addition,7(NUM_WORDS(Overview)),(all_numeric) (no extensions)y = 24.844,0.0,0.0,1.0,0.0,1.0,0.001519918441772461
+2,2,Columns,Addition,7(NUM_WORDS(Overview)),(all_numeric) y = 24.844,0.0,0.0,1.0,0.0,1.0,0.0021049976348876953
+3,2,Columns,Addition,7(NUM_WORDS(Overview)),(all_textual) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+0,2,Columns,Addition,8(a_wine.MIN(wine.IMDB_Rating)),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,2,Columns,Addition,8(a_wine.MIN(wine.IMDB_Rating)),(all_numeric) (no extensions)y =  + 1.000 * IMDB_Rating,1.0,1.0,2.0,0.0,1.0,0.0015497207641601562
+2,2,Columns,Addition,8(a_wine.MIN(wine.IMDB_Rating)),(all_numeric) y =  + 1.000 * IMDB_Rating,1.0,1.0,2.0,1.0,2.0,0.001851797103881836
+3,2,Columns,Addition,8(a_wine.MIN(wine.IMDB_Rating)),(all_numeric) y = 2.738 + 0.122 * IMDB_Rating^2 + -0.005 * IMDB_Rating^3,0.9999989880043213,0.9999991828844998,3.0,0.0,4.0,0.0022840499877929688
+4,2,Columns,Addition,8(a_wine.MIN(wine.IMDB_Rating)),(all_textual) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+0,3,Columns,Addition,6(is_top_movie),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,3,Columns,Addition,6(is_top_movie),"(all_numeric) transform(IMDB_Rating):
+  if IMDB_Rating <= 9.099999904632568:
+    new value: 0
+  else (IMDB_Rating > 9.099999904632568): 
+    new value: 1
+",1.0,1.0,3.0,1.0,1.0,0.001233816146850586
+2,3,Columns,Addition,6(is_top_movie),(all_numeric) (no extensions)y = -0.325 + 0.041 * IMDB_Rating,0.05360699319818962,0.0,2.0,0.0,1.0,0.002288341522216797
+3,3,Columns,Addition,6(is_top_movie),(all_numeric) y = 12.834 + -3.212 * IMDB_Rating + 0.201 * IMDB_Rating^2,0.2984463694182832,0.0,3.0,0.0,3.0,0.0020089149475097656
+4,3,Columns,Addition,6(is_top_movie),(all_numeric) y = -268.966 + 99.785 * IMDB_Rating + -12.327 * IMDB_Rating^2 + 0.507 * IMDB_Rating^3,0.6376857804904513,0.0,4.0,0.0,4.0,0.002276897430419922
+5,3,Columns,Addition,6(is_top_movie),(all_numeric) y = -0.325 + 0.041 * IMDB_Rating,0.053606993198189845,0.0,2.0,0.0,1.0,0.002655029296875
+6,3,Columns,Addition,6(is_top_movie),(all_numeric) y = -141.801 + -20.033 * IMDB_Rating + 144.345 * log(IMDB_Rating) + 0.001 * exp(IMDB_Rating),0.6870853230632854,0.0,4.0,1.0,4.0,0.002068042755126953
+7,3,Columns,Addition,6(is_top_movie),"(all_textual) t = Series_Title,Released_Year,Genre,Runtime,Overview
+t = f_number_of_words(t,4)
+",1.0,1.0,2.0,1.0,5.0,1.5522758960723877
+0,3,Columns,Addition,7(Rating_on_1_to_2_scale),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,3,Columns,Addition,7(Rating_on_1_to_2_scale),"(all_numeric) transform(IMDB_Rating):
+  if IMDB_Rating <= 7.950000047683716:
+    new value: 1
+  else (IMDB_Rating > 7.950000047683716): 
+    new value: 0
+",1.0,0.0,3.0,1.0,1.0,0.0012328624725341797
+2,3,Columns,Addition,7(Rating_on_1_to_2_scale),(all_numeric) (no extensions)y = 11.755 + -1.411 * IMDB_Rating,0.6296980516287767,0.0,2.0,0.0,1.0,0.0023140907287597656
+3,3,Columns,Addition,7(Rating_on_1_to_2_scale),(all_numeric) y = 99.315 + -23.056 * IMDB_Rating + 1.336 * IMDB_Rating^2,0.7383606287487923,0.0,3.0,0.0,3.0,0.002351045608520508
+4,3,Columns,Addition,7(Rating_on_1_to_2_scale),(all_numeric) y = 36.393 + -1.476 * IMDB_Rating^2 + 0.114 * IMDB_Rating^3,0.7399346965489068,0.0,3.0,0.0,4.0,0.002792835235595703
+5,3,Columns,Addition,7(Rating_on_1_to_2_scale),(all_numeric) y = 11.755 + -1.411 * IMDB_Rating,0.6296980516287769,0.0,2.0,0.0,1.0,0.0021750926971435547
+6,3,Columns,Addition,7(Rating_on_1_to_2_scale),(all_numeric) y = 28.283 + -3.739 * IMDB_Rating + 0.001 * exp(IMDB_Rating),0.7393821280525028,0.0,3.0,1.0,3.0,0.002851724624633789
+7,3,Columns,Addition,7(Rating_on_1_to_2_scale),(all_textual) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+0,3,Columns,Addition,8(Rating_on_1_to_5_scale),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,3,Columns,Addition,8(Rating_on_1_to_5_scale),"(all_numeric) transform(IMDB_Rating):
+  if IMDB_Rating <= 7.75:
+    new value: 3
+  else (IMDB_Rating > 7.75): 
+    if IMDB_Rating <= 8.050000190734863:
+      if IMDB_Rating <= 7.8500001430511475:
+        new value: 2
+      else (IMDB_Rating > 7.8500001430511475): 
+        new value: 1
+    else (IMDB_Rating > 8.050000190734863): 
+      if IMDB_Rating <= 8.25:
+        new value: 4
+      else (IMDB_Rating > 8.25): 
+        new value: 0
+",1.0,0.365,9.0,1.0,4.0,0.0012128353118896484
+2,3,Columns,Addition,8(Rating_on_1_to_5_scale),(all_numeric) (no extensions)y = 17.521 + -1.934 * IMDB_Rating,0.16452646814173544,0.0,2.0,0.0,1.0,0.002348184585571289
+3,3,Columns,Addition,8(Rating_on_1_to_5_scale),(all_numeric) y = -31.735 + 10.242 * IMDB_Rating + -0.751 * IMDB_Rating^2,0.16930870010640353,0.0,3.0,0.0,3.0,0.001935720443725586
+4,3,Columns,Addition,8(Rating_on_1_to_5_scale),(all_numeric) y = 7.121 + -0.010 * IMDB_Rating^3,0.16717051853834874,0.0,2.0,0.0,4.0,0.001967906951904297
+5,3,Columns,Addition,8(Rating_on_1_to_5_scale),(all_numeric) y = 17.521 + -1.934 * IMDB_Rating,0.1645264681417361,0.0,2.0,0.0,1.0,0.0026030540466308594
+6,3,Columns,Addition,8(Rating_on_1_to_5_scale),(all_numeric) y = -333618.375 + -22314.370 * IMDB_Rating + 162461.202 * sqrt(IMDB_Rating) + 419765.427 * 1/IMDB_Rating + 0.052 * exp(IMDB_Rating),0.27615386415325793,0.0,5.0,1.0,5.0,0.003805875778198242
+7,3,Columns,Addition,8(Rating_on_1_to_5_scale),(all_textual) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+0,3,Columns,Addition,9(top_drama_movie),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,3,Columns,Addition,9(top_drama_movie),"(all_numeric) transform(IMDB_Rating):
+  if IMDB_Rating <= 9.25:
+    new value: 0
+  else (IMDB_Rating > 9.25): 
+    new value: 1
+",1.0,1.0,3.0,1.0,1.0,0.001379251480102539
+2,3,Columns,Addition,9(top_drama_movie),(all_numeric) (no extensions)y = 0.001,0.0,0.0,1.0,0.0,1.0,0.0027730464935302734
+3,3,Columns,Addition,9(top_drama_movie),(all_numeric) y = 0.001,0.0,0.0,1.0,0.0,1.0,0.0021660327911376953
+4,3,Columns,Addition,9(top_drama_movie),"(all_textual) t = Series_Title,Released_Year,Genre,Runtime,Overview
+t = f_number_of_words(t,4)
+",1.0,1.0,2.0,1.0,5.0,1.5577561855316162
+0,4,Columns,Addition,6(first_Genre),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,4,Columns,Addition,6(first_Genre),(all_numeric) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+2,4,Columns,Addition,6(first_Genre),(all_textual) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+0,4,Columns,Addition,7(count_words_in_title),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,4,Columns,Addition,7(count_words_in_title),(all_numeric) (no extensions)y = 1.811,0.0,0.0,1.0,0.0,1.0,0.0015289783477783203
+2,4,Columns,Addition,7(count_words_in_title),(all_numeric) y = 1.811,0.0,0.0,1.0,0.0,1.0,0.002034902572631836
+3,4,Columns,Addition,7(count_words_in_title),(all_numeric) y = -827.514 + 303.825 * IMDB_Rating + -37.057 * IMDB_Rating^2 + 1.505 * IMDB_Rating^3,0.0033905069661370746,0.0,4.0,0.0,4.0,0.002538919448852539
+4,4,Columns,Addition,7(count_words_in_title),(all_textual) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+0,4,Columns,Addition,8(runtime_no_min),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,4,Columns,Addition,8(runtime_no_min),(all_numeric) (no extensions)y = -66.816 + 23.921 * IMDB_Rating,0.05779049144018433,0.05612755281898851,2.0,0.0,1.0,0.0016591548919677734
+2,4,Columns,Addition,8(runtime_no_min),(all_numeric) y = 372.840 + -84.763 * IMDB_Rating + 6.706 * IMDB_Rating^2,0.058665221273091595,0.058669254413906136,3.0,0.0,3.0,0.0018310546875
+3,4,Columns,Addition,8(runtime_no_min),(all_numeric) y = 61.988 + 0.122 * IMDB_Rating^3,0.058400454905840005,0.057436891307229065,2.0,0.0,4.0,0.002232074737548828
+4,4,Columns,Addition,8(runtime_no_min),(all_numeric) y = -66.816 + 23.921 * IMDB_Rating,0.05779049144018433,0.05612755281898851,2.0,0.0,1.0,0.002173900604248047
+5,4,Columns,Addition,8(runtime_no_min),(all_numeric) y = 103.661 + 0.007 * exp(IMDB_Rating),0.05778475974185848,0.05887583298534993,2.0,1.0,3.0,0.003155946731567383
+6,4,Columns,Addition,8(runtime_no_min),(all_textual) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+0,4,Columns,Addition,9(Overview_len),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,4,Columns,Addition,9(Overview_len),(all_numeric) (no extensions)y = 145.602,0.0,0.0,1.0,0.0,1.0,0.0017769336700439453
+2,4,Columns,Addition,9(Overview_len),(all_numeric) y = 145.602,0.0,0.0,1.0,0.0,1.0,0.002321958541870117
+3,4,Columns,Addition,9(Overview_len),(all_numeric) y = 29222.909 + -10518.459 * IMDB_Rating + 1265.452 * IMDB_Rating^2 + -50.628 * IMDB_Rating^3,0.006377189418654283,0.0,4.0,0.0,4.0,0.003762960433959961
+4,4,Columns,Addition,9(Overview_len),(all_numeric) y = 18014.218 + 2400.823 * IMDB_Rating + -17746.389 * log(IMDB_Rating) + -0.059 * exp(IMDB_Rating),0.0066714275309713855,0.0,4.0,1.0,4.0,0.0041310787200927734
+5,4,Columns,Addition,9(Overview_len),"(all_textual) t = Series_Title,Released_Year,Genre,Runtime,Overview
+t = f_len(t,4)
+",1.0,1.0,6.0,1.0,5.0,0.8939840793609619
+0,4,Columns,Addition,10(Overview_len_in_words),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,4,Columns,Addition,10(Overview_len_in_words),(all_numeric) (no extensions)y = 23.844,0.0,0.0,1.0,0.0,1.0,0.0015330314636230469
+2,4,Columns,Addition,10(Overview_len_in_words),(all_numeric) y = 23.844,0.0,0.0,1.0,0.0,1.0,0.0022966861724853516
+3,4,Columns,Addition,10(Overview_len_in_words),(all_textual) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+0,4,Columns,Addition,11(Year_two_chars),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,4,Columns,Addition,11(Year_two_chars),(all_numeric) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+2,4,Columns,Addition,11(Year_two_chars),(all_textual) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+0,5,Columns,Addition,6(Series_Title_lower),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,5,Columns,Addition,6(Series_Title_lower),(all_numeric) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+2,5,Columns,Addition,6(Series_Title_lower),(all_textual) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+0,5,Columns,Addition,7(Series_Title_no_punc),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,5,Columns,Addition,7(Series_Title_no_punc),(all_numeric) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+2,5,Columns,Addition,7(Series_Title_no_punc),(all_textual) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+0,5,Columns,Addition,8(Overview_no_num),"(no_find_origin) t = Series_Title,Released_Year,Genre,Runtime,IMDB_Rating,Overview
+t = f_remove_url(t,5)
+",1.0,1.0,7.0,1.0,6.0,7.452244997024536
+1,5,Columns,Addition,8(Overview_no_num),(all_numeric) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+2,5,Columns,Addition,8(Overview_no_num),"(all_textual) t = Series_Title,Released_Year,Genre,Runtime,Overview
+t = f_remove_url(t,4)
+",1.0,1.0,7.0,1.0,5.0,5.32873010635376
+0,5,Columns,Addition,9(Overview_lemmatized),"(no_find_origin) t = Series_Title,Released_Year,Genre,Runtime,IMDB_Rating,Overview
+t = f_remove_url(t,5)
+",1.0,1.0,7.0,1.0,6.0,7.454612970352173
+1,5,Columns,Addition,9(Overview_lemmatized),(all_numeric) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+2,5,Columns,Addition,9(Overview_lemmatized),"(all_textual) t = Series_Title,Released_Year,Genre,Runtime,Overview
+t = f_remove_url(t,4)
+",1.0,1.0,7.0,1.0,5.0,5.327852964401245
+0,5,Columns,Addition,10(Overview_no_stopwords),"(no_find_origin) t = Series_Title,Released_Year,Genre,Runtime,IMDB_Rating,Overview
+t = f_remove_stopwords(t,5)
+",1.0,1.0,6.0,1.0,6.0,2.2117669582366943
+1,5,Columns,Addition,10(Overview_no_stopwords),(all_numeric) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+2,5,Columns,Addition,10(Overview_no_stopwords),"(all_textual) t = Series_Title,Released_Year,Genre,Runtime,Overview
+t = f_remove_stopwords(t,4)
+",1.0,1.0,6.0,1.0,5.0,1.5884742736816406
+0,5,Columns,Addition,11(Overview_no_num_no_punc),"(no_find_origin) t = Series_Title,Released_Year,Genre,Runtime,IMDB_Rating,Overview
+t = f_remove_punctuation(t,5)
+",1.0,1.0,7.0,1.0,6.0,4.689769983291626
+1,5,Columns,Addition,11(Overview_no_num_no_punc),(all_numeric) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+2,5,Columns,Addition,11(Overview_no_num_no_punc),"(all_textual) t = Series_Title,Released_Year,Genre,Runtime,Overview
+t = f_remove_punctuation(t,4)
+",1.0,1.0,7.0,1.0,5.0,3.37904691696167
+0,5,Columns,Addition,12(Overview_no_num_no_punc_no_stopwords),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,5,Columns,Addition,12(Overview_no_num_no_punc_no_stopwords),(all_numeric) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+2,5,Columns,Addition,12(Overview_no_num_no_punc_no_stopwords),(all_textual) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+0,7,Columns,Addition,6(Genre_code),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,7,Columns,Addition,6(Genre_code),(all_numeric) (no extensions)y = -1.050 + 12.048 * IMDB_Rating,0.004395488258475133,0.0,2.0,0.0,1.0,0.0015780925750732422
+2,7,Columns,Addition,6(Genre_code),(all_numeric) y = 48.082 + 0.737 * IMDB_Rating^2,0.004334950182788844,0.0,2.0,0.0,3.0,0.002162933349609375
+3,7,Columns,Addition,6(Genre_code),(all_numeric) y = 64.499 + 0.060 * IMDB_Rating^3,0.004262074762087842,0.0,2.0,0.0,4.0,0.002507925033569336
+4,7,Columns,Addition,6(Genre_code),(all_numeric) y = -1.050 + 12.048 * IMDB_Rating,0.004395488258475244,0.0,2.0,0.0,1.0,0.002112865447998047
+5,7,Columns,Addition,6(Genre_code),(all_numeric) y = -2401772.077 + -159817.836 * IMDB_Rating + 1166673.703 * sqrt(IMDB_Rating) + 3036041.158 * 1/IMDB_Rating + 0.353 * exp(IMDB_Rating),0.009280868478489634,0.0,5.0,1.0,5.0,0.003860950469970703
+6,7,Columns,Addition,6(Genre_code),(all_textual) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+0,8,Columns,Addition,6(Genre_code),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,8,Columns,Addition,6(Genre_code),(all_numeric) (no extensions)y = 0.020,0.0,0.0,1.0,0.0,1.0,0.001608133316040039
+2,8,Columns,Addition,6(Genre_code),(all_numeric) y = 0.020,0.0,0.0,1.0,0.0,1.0,0.002170085906982422
+3,8,Columns,Addition,6(Genre_code),(all_numeric) y = 0.016 + ε * exp(IMDB_Rating),0.0037873897735654083,0.0,2.0,1.0,3.0,0.001894235610961914
+4,8,Columns,Addition,6(Genre_code),(all_textual) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+0,9,Columns,Addition,6(count_words_in_title),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,9,Columns,Addition,6(count_words_in_title),(all_numeric) (no extensions)y = 1.811,0.0,0.0,1.0,0.0,1.0,0.0015642642974853516
+2,9,Columns,Addition,6(count_words_in_title),(all_numeric) y = 1.811,0.0,0.0,1.0,0.0,1.0,0.002111196517944336
+3,9,Columns,Addition,6(count_words_in_title),(all_numeric) y = -827.514 + 303.825 * IMDB_Rating + -37.057 * IMDB_Rating^2 + 1.505 * IMDB_Rating^3,0.0033905069661370746,0.0,4.0,0.0,4.0,0.002494335174560547
+4,9,Columns,Addition,6(count_words_in_title),(all_textual) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+0,9,Columns,Addition,7(runtime_no_min),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,9,Columns,Addition,7(runtime_no_min),(all_numeric) (no extensions)y = -66.816 + 23.921 * IMDB_Rating,0.05779049144018433,0.05612755281898851,2.0,0.0,1.0,0.0015888214111328125
+2,9,Columns,Addition,7(runtime_no_min),(all_numeric) y = 372.840 + -84.763 * IMDB_Rating + 6.706 * IMDB_Rating^2,0.058665221273091595,0.058669254413906136,3.0,0.0,3.0,0.0019099712371826172
+3,9,Columns,Addition,7(runtime_no_min),(all_numeric) y = 61.988 + 0.122 * IMDB_Rating^3,0.058400454905840005,0.057436891307229065,2.0,0.0,4.0,0.0022521018981933594
+4,9,Columns,Addition,7(runtime_no_min),(all_numeric) y = -66.816 + 23.921 * IMDB_Rating,0.05779049144018433,0.05612755281898851,2.0,0.0,1.0,0.00226593017578125
+5,9,Columns,Addition,7(runtime_no_min),(all_numeric) y = 103.661 + 0.007 * exp(IMDB_Rating),0.05778475974185848,0.05887583298534993,2.0,1.0,3.0,0.003342866897583008
+6,9,Columns,Addition,7(runtime_no_min),(all_textual) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+0,9,Columns,Addition,8(Overview_len),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,9,Columns,Addition,8(Overview_len),(all_numeric) (no extensions)y = 145.602,0.0,0.0,1.0,0.0,1.0,0.0021331310272216797
+2,9,Columns,Addition,8(Overview_len),(all_numeric) y = 145.602,0.0,0.0,1.0,0.0,1.0,0.002101898193359375
+3,9,Columns,Addition,8(Overview_len),(all_numeric) y = 29222.909 + -10518.459 * IMDB_Rating + 1265.452 * IMDB_Rating^2 + -50.628 * IMDB_Rating^3,0.006377189418654283,0.0,4.0,0.0,4.0,0.0030939579010009766
+4,9,Columns,Addition,8(Overview_len),(all_numeric) y = 18014.218 + 2400.823 * IMDB_Rating + -17746.389 * log(IMDB_Rating) + -0.059 * exp(IMDB_Rating),0.0066714275309713855,0.0,4.0,1.0,4.0,0.0032851696014404297
+5,9,Columns,Addition,8(Overview_len),"(all_textual) t = Series_Title,Released_Year,Genre,Runtime,Overview
+t = f_len(t,4)
+",1.0,1.0,6.0,1.0,5.0,0.8484811782836914
+0,9,Columns,Addition,9(Overview_len_in_words),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,9,Columns,Addition,9(Overview_len_in_words),(all_numeric) (no extensions)y = 23.844,0.0,0.0,1.0,0.0,1.0,0.0015859603881835938
+2,9,Columns,Addition,9(Overview_len_in_words),(all_numeric) y = 23.844,0.0,0.0,1.0,0.0,1.0,0.0022504329681396484
+3,9,Columns,Addition,9(Overview_len_in_words),(all_textual) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+0,9,Columns,Addition,10(Overview_len_in_sentences),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,9,Columns,Addition,10(Overview_len_in_sentences),(all_numeric) (no extensions)y = 145.602,0.0,0.0,1.0,0.0,1.0,0.0017001628875732422
+2,9,Columns,Addition,10(Overview_len_in_sentences),(all_numeric) y = 145.602,0.0,0.0,1.0,0.0,1.0,0.0021169185638427734
+3,9,Columns,Addition,10(Overview_len_in_sentences),(all_numeric) y = 29222.909 + -10518.459 * IMDB_Rating + 1265.452 * IMDB_Rating^2 + -50.628 * IMDB_Rating^3,0.006377189418654283,0.0,4.0,0.0,4.0,0.0034928321838378906
+4,9,Columns,Addition,10(Overview_len_in_sentences),(all_numeric) y = 18014.218 + 2400.823 * IMDB_Rating + -17746.389 * log(IMDB_Rating) + -0.059 * exp(IMDB_Rating),0.0066714275309713855,0.0,4.0,1.0,4.0,0.003258228302001953
+5,9,Columns,Addition,10(Overview_len_in_sentences),"(all_textual) t = Series_Title,Released_Year,Genre,Runtime,Overview
+t = f_len(t,4)
+",1.0,1.0,6.0,1.0,5.0,0.8412518501281738
+0,10,Columns,Addition,6(first_Genre),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,10,Columns,Addition,6(first_Genre),(all_numeric) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+2,10,Columns,Addition,6(first_Genre),(all_textual) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+0,10,Columns,Addition,7(Year_two_chars),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,10,Columns,Addition,7(Year_two_chars),(all_numeric) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+2,10,Columns,Addition,7(Year_two_chars),(all_textual) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+0,11,Columns,Addition,6(Series_Title_lower),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,11,Columns,Addition,6(Series_Title_lower),(all_numeric) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+2,11,Columns,Addition,6(Series_Title_lower),(all_textual) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+0,11,Columns,Addition,7(Series_Title_no_punc),(no_find_origin) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+1,11,Columns,Addition,7(Series_Title_no_punc),(all_numeric) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+2,11,Columns,Addition,7(Series_Title_no_punc),(all_textual) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+0,11,Columns,Addition,8(Overview_no_num),"(no_find_origin) t = Series_Title,Released_Year,Genre,Runtime,IMDB_Rating,Overview
+t = f_remove_url(t,5)
+",1.0,1.0,7.0,1.0,6.0,7.430694818496704
+1,11,Columns,Addition,8(Overview_no_num),(all_numeric) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+2,11,Columns,Addition,8(Overview_no_num),"(all_textual) t = Series_Title,Released_Year,Genre,Runtime,Overview
+t = f_remove_url(t,4)
+",1.0,1.0,7.0,1.0,5.0,5.309890270233154
+0,11,Columns,Addition,9(Overview_lemmatized),"(no_find_origin) t = Series_Title,Released_Year,Genre,Runtime,IMDB_Rating,Overview
+t = f_remove_url(t,5)
+",1.0,1.0,7.0,1.0,6.0,7.439626216888428
+1,11,Columns,Addition,9(Overview_lemmatized),(all_numeric) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+2,11,Columns,Addition,9(Overview_lemmatized),"(all_textual) t = Series_Title,Released_Year,Genre,Runtime,Overview
+t = f_remove_url(t,4)
+",1.0,1.0,7.0,1.0,5.0,5.322019100189209
+0,11,Columns,Addition,10(Overview_no_stopwords),"(no_find_origin) t = Series_Title,Released_Year,Genre,Runtime,IMDB_Rating,Overview
+t = f_remove_stopwords(t,5)
+",1.0,1.0,6.0,1.0,6.0,2.205188274383545
+1,11,Columns,Addition,10(Overview_no_stopwords),(all_numeric) no solution found!,0.0,0.0,0.0,0.0,0.0,0.0
+2,11,Columns,Addition,10(Overview_no_stopwords),"(all_textual) t = Series_Title,Released_Year,Genre,Runtime,Overview
+t = f_remove_stopwords(t,4)
+",1.0,1.0,6.0,1.0,5.0,1.5906431674957275
+0,12,Columns,Removal,6(Series_Title_exact_copy),DUPLICATED (Series_Title),1.0,1.0,1,1,1,0.0002532005310058594
+0,12,Columns,Removal,7(Series_Title_with_noise),DUPLICATED (Series_Title),1.0,1.0,1,1,1,0.00017595291137695312
+0,13,Columns,Removal,6(Series_Title_with_noise),DUPLICATED (Series_Title),1.0,1.0,1,1,1,0.0002269744873046875

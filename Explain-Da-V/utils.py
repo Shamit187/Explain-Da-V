@@ -777,7 +777,7 @@ def learn_data_transformation_textual_feature(X_train, y_train, X_test, y_test, 
     X_train_new = X_train[numeric_attributes]
     ohe = OneHotEncoder(handle_unknown='ignore')
     ohe.fit(X_train_categorial)
-    one_hot_rep = pd.DataFrame(ohe.transform(X_train_categorial).toarray(), columns=ohe.get_feature_names())
+    one_hot_rep = pd.DataFrame(ohe.transform(X_train_categorial).toarray(), columns=ohe.get_feature_names_out())
     X_train_new[one_hot_rep.columns.tolist()] = one_hot_rep
     try:
         X_train_new = X_train_new.fillna(0)
@@ -787,7 +787,7 @@ def learn_data_transformation_textual_feature(X_train, y_train, X_test, y_test, 
     X_test_categorial = X_test[textual_attributes_with_small_domain]
     X_test_new = X_test[numeric_attributes]
     try:
-        one_hot_rep = pd.DataFrame(ohe.transform(X_test_categorial).toarray(), columns=ohe.get_feature_names())
+        one_hot_rep = pd.DataFrame(ohe.transform(X_test_categorial).toarray(), columns=ohe.get_feature_names_out())
     except:
         print('cant one hot')
         return {}, []

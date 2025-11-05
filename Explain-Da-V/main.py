@@ -16,7 +16,7 @@ import data_gen
 import operator
 import warnings
 import time
-from Baselines.internal_baselines import *
+# from Baselines.internal_baselines import *
 import func_timeout
 
 
@@ -457,50 +457,50 @@ def explain_full(T_pair_validation, T_pair_generalization):
     utils.inspect_full_table_transformation(T_pair_validation, T_pair_generalization)
 
 
-def main_regular():
-    df, df_prime = data_gen.table_pair_generation_wine_quality(LH_table_file)
-    T = Table(df)
-    T_prime = Table(df_prime)
-    T_pair = Table_Pair(T, T_prime)
-    utils.find_attribute_match(T_pair)
-    T_prime.update_projected_table(T_pair.RHCA)
-    utils.find_record_match(T_pair)
+# def main_regular():
+#     df, df_prime = data_gen.table_pair_generation_wine_quality(LH_table_file)
+#     T = Table(df)
+#     T_prime = Table(df_prime)
+#     T_pair = Table_Pair(T, T_prime)
+#     utils.find_attribute_match(T_pair)
+#     T_prime.update_projected_table(T_pair.RHCA)
+#     utils.find_record_match(T_pair)
 
-    print('Attributes to explain:')
-    print('LHDA:', T_pair.LHDA, 'RHDA:', T_pair.RHDA)
-    print("-" * 50)
-    # RHDA_solutions = explain_attributes_RHDA(T_pair)
-    # RHDA_solutions['orientation'] = 'Columns'
-    # RHDA_solutions['direction'] = 'Addition'
-    # explain_attributes_LHDA(T_pair)
+#     print('Attributes to explain:')
+#     print('LHDA:', T_pair.LHDA, 'RHDA:', T_pair.RHDA)
+#     print("-" * 50)
+#     # RHDA_solutions = explain_attributes_RHDA(T_pair)
+#     # RHDA_solutions['orientation'] = 'Columns'
+#     # RHDA_solutions['direction'] = 'Addition'
+#     # explain_attributes_LHDA(T_pair)
 
-    print("-" * 50)
-    # print('Rows to explain:')
-    print('LHDr:', T_pair.LHDr, 'RHDr:', T_pair.RHDr)
-    # explain_rows_LHDr(T_pair)
-    # explain_rows_RHDr(T_pair)
+#     print("-" * 50)
+#     # print('Rows to explain:')
+#     print('LHDr:', T_pair.LHDr, 'RHDr:', T_pair.RHDr)
+#     # explain_rows_LHDr(T_pair)
+#     # explain_rows_RHDr(T_pair)
 
 
-def main_full():
-    df, df_prime = data_gen.table_pair_generation_wine_quality_full(LH_table_file)
-    T = Table(df)
-    T_prime = Table(df_prime)
-    T_pair = Table_Pair(T, T_prime)
-    utils.find_attribute_match(T_pair)
-    T_prime.update_projected_table(T_pair.RHCA)
-    utils.find_record_match(T_pair, False)
+# def main_full():
+#     df, df_prime = data_gen.table_pair_generation_wine_quality_full(LH_table_file)
+#     T = Table(df)
+#     T_prime = Table(df_prime)
+#     T_pair = Table_Pair(T, T_prime)
+#     utils.find_attribute_match(T_pair)
+#     T_prime.update_projected_table(T_pair.RHCA)
+#     utils.find_record_match(T_pair, False)
 
-    # print('Attributes to explain:')
-    # print('LHDA:', T_pair.LHDA, 'RHDA:', T_pair.RHDA)
-    # print("-" * 50)
-    # explain_attributes_RHDA(T_pair)
-    # explain_attributes_RHDA(print_all_solutions=True)
-    # explain_attributes_RHDA(use_fd_discovery=False)
-    # print("-" * 50)
-    # print('Rows to explain:')
-    # print('LHDr:', T_pair.LHDr, 'RHDr:', T_pair.RHDr)
-    # print('Explaining full table transformation:')
-    # explain_full(T_pair)
+#     # print('Attributes to explain:')
+#     # print('LHDA:', T_pair.LHDA, 'RHDA:', T_pair.RHDA)
+#     # print("-" * 50)
+#     # explain_attributes_RHDA(T_pair)
+#     # explain_attributes_RHDA(print_all_solutions=True)
+#     # explain_attributes_RHDA(use_fd_discovery=False)
+#     # print("-" * 50)
+#     # print('Rows to explain:')
+#     # print('LHDr:', T_pair.LHDr, 'RHDr:', T_pair.RHDr)
+#     # print('Explaining full table transformation:')
+#     # explain_full(T_pair)
 
 
 def main_with_problem_sets(use_fd_discovery=False,
@@ -615,145 +615,145 @@ def main_with_problem_sets(use_fd_discovery=False,
         # output.to_csv('output/output_explain_da_V_most_recent.csv')
 
 
-def main_with_problem_sets_baseline_original(extend_for_auto_pipeline=False,
-                                             extend_for_plus=False,
-                                             use_fd_discovery=False):
-    start_time = time.time()
-    problem_sets = data_gen.load_problem_sets_generate_table_pairs(problem_sets_file)
+# def main_with_problem_sets_baseline_original(extend_for_auto_pipeline=False,
+#                                              extend_for_plus=False,
+#                                              use_fd_discovery=False):
+#     start_time = time.time()
+#     problem_sets = data_gen.load_problem_sets_generate_table_pairs(problem_sets_file)
 
-    output = pd.DataFrame(columns=['problem_set',
-                                   'orientation',
-                                   'direction',
-                                   'target',
-                                   'solution',
-                                   'validity',
-                                   'generalizability',
-                                   'explainability_size',
-                                   'explainabilty_repeated_terms',
-                                   'explainabilty_cognitive_chunks',
-                                   'time_to_generate'])
-    for i, problem_set in enumerate(problem_sets):
-        print('**** Problem Set {} ****'.format(i))
-        print(problem_set['Setup'])
-        if i in [52, 63, 90, 91, 92, 93]:
-            continue
-        # if extend_for_auto_pipeline and i < 15:
-        # continue]
-        # if i < 3:
-        #     continue
-        T_validation = Table(problem_set['T_validation'])
-        T_prime_validation = Table(problem_set['T_prime_validation'])
-        T_pair_validation = Table_Pair(T_validation, T_prime_validation)
-        is_record_match = utils.find_attribute_match(T_pair_validation)
-        if is_record_match:
-            T_prime_validation.update_projected_table(T_pair_validation.RHCA)
-            T_validation.update_projected_table(T_pair_validation.LHCA)
-            utils.find_record_match(T_pair_validation)
+#     output = pd.DataFrame(columns=['problem_set',
+#                                    'orientation',
+#                                    'direction',
+#                                    'target',
+#                                    'solution',
+#                                    'validity',
+#                                    'generalizability',
+#                                    'explainability_size',
+#                                    'explainabilty_repeated_terms',
+#                                    'explainabilty_cognitive_chunks',
+#                                    'time_to_generate'])
+#     for i, problem_set in enumerate(problem_sets):
+#         print('**** Problem Set {} ****'.format(i))
+#         print(problem_set['Setup'])
+#         if i in [52, 63, 90, 91, 92, 93]:
+#             continue
+#         # if extend_for_auto_pipeline and i < 15:
+#         # continue]
+#         # if i < 3:
+#         #     continue
+#         T_validation = Table(problem_set['T_validation'])
+#         T_prime_validation = Table(problem_set['T_prime_validation'])
+#         T_pair_validation = Table_Pair(T_validation, T_prime_validation)
+#         is_record_match = utils.find_attribute_match(T_pair_validation)
+#         if is_record_match:
+#             T_prime_validation.update_projected_table(T_pair_validation.RHCA)
+#             T_validation.update_projected_table(T_pair_validation.LHCA)
+#             utils.find_record_match(T_pair_validation)
 
-        T_generalization = Table(problem_set['T_generalization'])
-        T_prime_generalization = Table(problem_set['T_prime_generalization'])
-        T_pair_generalization = Table_Pair(T_generalization, T_prime_generalization)
-        utils.find_attribute_match(T_pair_generalization)
-        if is_record_match:
-            T_prime_generalization.update_projected_table(T_pair_generalization.RHCA)
-            T_generalization.update_projected_table(T_pair_generalization.LHCA)
-            utils.find_record_match(T_pair_generalization)
-        if len(T_pair_validation.sigma_A) == 0:
-            print('remember that this is very easy to resolve!')
-            continue
-        if len(T_pair_validation.LHDA) > 100 or len(T_pair_validation.RHDA) > 100:
-            print('probably a pivot or transpose')
-            continue
-        print(T_pair_validation.sigma_A)
-        print('Attributes to explain:')
-        print('LHDA:', T_pair_validation.LHDA, 'RHDA:', T_pair_validation.RHDA)
-        print("-" * 50)
-        attribute_addition_solutions = explain_attributes_RHDA_baseline_iterative(T_pair_validation,
-                                                                                  T_pair_generalization,
-                                                                                  is_record_match=is_record_match,
-                                                                                  use_fd_discovery=use_fd_discovery,
-                                                                                  extend_for_auto_pipeline=extend_for_auto_pipeline,
-                                                                                  extend_for_plus=extend_for_plus,
-                                                                                  print_all_solutions=False)
-        attribute_addition_solutions['orientation'] = 'Columns'
-        attribute_addition_solutions['direction'] = 'Addition'
-        attribute_addition_solutions['problem_set'] = str(i)
-        output = pd.concat([output, attribute_addition_solutions[output.columns]])
+#         T_generalization = Table(problem_set['T_generalization'])
+#         T_prime_generalization = Table(problem_set['T_prime_generalization'])
+#         T_pair_generalization = Table_Pair(T_generalization, T_prime_generalization)
+#         utils.find_attribute_match(T_pair_generalization)
+#         if is_record_match:
+#             T_prime_generalization.update_projected_table(T_pair_generalization.RHCA)
+#             T_generalization.update_projected_table(T_pair_generalization.LHCA)
+#             utils.find_record_match(T_pair_generalization)
+#         if len(T_pair_validation.sigma_A) == 0:
+#             print('remember that this is very easy to resolve!')
+#             continue
+#         if len(T_pair_validation.LHDA) > 100 or len(T_pair_validation.RHDA) > 100:
+#             print('probably a pivot or transpose')
+#             continue
+#         print(T_pair_validation.sigma_A)
+#         print('Attributes to explain:')
+#         print('LHDA:', T_pair_validation.LHDA, 'RHDA:', T_pair_validation.RHDA)
+#         print("-" * 50)
+#         attribute_addition_solutions = explain_attributes_RHDA_baseline_iterative(T_pair_validation,
+#                                                                                   T_pair_generalization,
+#                                                                                   is_record_match=is_record_match,
+#                                                                                   use_fd_discovery=use_fd_discovery,
+#                                                                                   extend_for_auto_pipeline=extend_for_auto_pipeline,
+#                                                                                   extend_for_plus=extend_for_plus,
+#                                                                                   print_all_solutions=False)
+#         attribute_addition_solutions['orientation'] = 'Columns'
+#         attribute_addition_solutions['direction'] = 'Addition'
+#         attribute_addition_solutions['problem_set'] = str(i)
+#         output = pd.concat([output, attribute_addition_solutions[output.columns]])
 
-        attribute_removal_solutions = explain_attributes_LHDA_baseline_iterative(T_pair_validation,
-                                                                                 T_pair_generalization,
-                                                                                 is_record_match,
-                                                                                 extend_for_auto_pipeline=extend_for_auto_pipeline,
-                                                                                 extend_for_plus=extend_for_plus)
-        attribute_removal_solutions['orientation'] = 'Columns'
-        attribute_removal_solutions['direction'] = 'Removal'
-        attribute_removal_solutions['problem_set'] = str(i)
-        output = pd.concat([output, attribute_removal_solutions[output.columns]])
+#         attribute_removal_solutions = explain_attributes_LHDA_baseline_iterative(T_pair_validation,
+#                                                                                  T_pair_generalization,
+#                                                                                  is_record_match,
+#                                                                                  extend_for_auto_pipeline=extend_for_auto_pipeline,
+#                                                                                  extend_for_plus=extend_for_plus)
+#         attribute_removal_solutions['orientation'] = 'Columns'
+#         attribute_removal_solutions['direction'] = 'Removal'
+#         attribute_removal_solutions['problem_set'] = str(i)
+#         output = pd.concat([output, attribute_removal_solutions[output.columns]])
 
-        if is_record_match:
-            print("-" * 50)
-            print('Rows to explain:')
-            print('LHDr:', T_pair_validation.LHDr, 'RHDr:', T_pair_validation.RHDr)
-            rows_removal_solutions = explain_rows_LHDr_baseline_iterative(T_pair_validation,
-                                                                          T_pair_generalization,
-                                                                          extend_for_auto_pipeline=extend_for_auto_pipeline,
-                                                                          extend_for_plus=extend_for_plus)
-            rows_removal_solutions['orientation'] = 'Rows'
-            rows_removal_solutions['direction'] = 'Removal'
-            rows_removal_solutions['problem_set'] = str(i)
-            output = pd.concat([output, rows_removal_solutions[output.columns]])
+#         if is_record_match:
+#             print("-" * 50)
+#             print('Rows to explain:')
+#             print('LHDr:', T_pair_validation.LHDr, 'RHDr:', T_pair_validation.RHDr)
+#             rows_removal_solutions = explain_rows_LHDr_baseline_iterative(T_pair_validation,
+#                                                                           T_pair_generalization,
+#                                                                           extend_for_auto_pipeline=extend_for_auto_pipeline,
+#                                                                           extend_for_plus=extend_for_plus)
+#             rows_removal_solutions['orientation'] = 'Rows'
+#             rows_removal_solutions['direction'] = 'Removal'
+#             rows_removal_solutions['problem_set'] = str(i)
+#             output = pd.concat([output, rows_removal_solutions[output.columns]])
 
-            rows_addition_solutions = explain_rows_RHDr_baseline_iterative(T_pair_validation, T_pair_generalization)
-            rows_addition_solutions['orientation'] = 'Rows'
-            rows_addition_solutions['direction'] = 'Addition'
-            rows_addition_solutions['problem_set'] = str(i)
-            output = pd.concat([output, rows_addition_solutions[output.columns]])
+#             rows_addition_solutions = explain_rows_RHDr_baseline_iterative(T_pair_validation, T_pair_generalization)
+#             rows_addition_solutions['orientation'] = 'Rows'
+#             rows_addition_solutions['direction'] = 'Addition'
+#             rows_addition_solutions['problem_set'] = str(i)
+#             output = pd.concat([output, rows_addition_solutions[output.columns]])
 
-            # Maybe send to full if no solutions found
-            if extend_for_plus:
-                output.to_csv('output/output_{}_foofahplus_nofd_{}.csv'.format(dataset_name, start_time))
-                output.to_csv('output/output_foofahplus_nofd_most_recent.csv')
-            elif extend_for_auto_pipeline:
-                output.to_csv('output/output_{}_autopipeline_nofd_{}.csv'.format(dataset_name, start_time))
-                output.to_csv('output/output_autopipeline_nofd_most_recent.csv')
-            else:
-                output.to_csv('output/output_{}_foofah_nofd_{}.csv'.format(dataset_name, start_time))
-                output.to_csv('output/output_foofah_nofd_most_recent.csv')
+#             # Maybe send to full if no solutions found
+#             if extend_for_plus:
+#                 output.to_csv('output/output_{}_foofahplus_nofd_{}.csv'.format(dataset_name, start_time))
+#                 output.to_csv('output/output_foofahplus_nofd_most_recent.csv')
+#             elif extend_for_auto_pipeline:
+#                 output.to_csv('output/output_{}_autopipeline_nofd_{}.csv'.format(dataset_name, start_time))
+#                 output.to_csv('output/output_autopipeline_nofd_most_recent.csv')
+#             else:
+#                 output.to_csv('output/output_{}_foofah_nofd_{}.csv'.format(dataset_name, start_time))
+#                 output.to_csv('output/output_foofah_nofd_most_recent.csv')
 
 
-def main_save_alternatives():
-    problem_sets = data_gen.load_problem_sets_generate_table_pairs(problem_sets_file)
-    version_counter = 0
-    new_problem_set = []
-    path = problem_sets_file.rsplit('/', 1)[0] + '_chanked'
-    if not os.path.exists(path):
-        os.makedirs(path)
-    for i, problem_set in enumerate(problem_sets):
-        print('**** Problem Set {} ****'.format(i))
-        T_validation = Table(problem_set['T_validation'])
-        T_prime_validation = Table(problem_set['T_prime_validation'])
-        T_pair_validation = Table_Pair(T_validation, T_prime_validation)
-        is_record_match = utils.find_attribute_match(T_pair_validation)
-        if is_record_match:
-            T_prime_validation.update_projected_table(T_pair_validation.RHCA)
-            T_validation.update_projected_table(T_pair_validation.LHCA)
-            utils.find_record_match(T_pair_validation)
+# def main_save_alternatives():
+#     problem_sets = data_gen.load_problem_sets_generate_table_pairs(problem_sets_file)
+#     version_counter = 0
+#     new_problem_set = []
+#     path = problem_sets_file.rsplit('/', 1)[0] + '_chanked'
+#     if not os.path.exists(path):
+#         os.makedirs(path)
+#     for i, problem_set in enumerate(problem_sets):
+#         print('**** Problem Set {} ****'.format(i))
+#         T_validation = Table(problem_set['T_validation'])
+#         T_prime_validation = Table(problem_set['T_prime_validation'])
+#         T_pair_validation = Table_Pair(T_validation, T_prime_validation)
+#         is_record_match = utils.find_attribute_match(T_pair_validation)
+#         if is_record_match:
+#             T_prime_validation.update_projected_table(T_pair_validation.RHCA)
+#             T_validation.update_projected_table(T_pair_validation.LHCA)
+#             utils.find_record_match(T_pair_validation)
 
-        T_generalization = Table(problem_set['T_generalization'])
-        T_prime_generalization = Table(problem_set['T_prime_generalization'])
-        T_pair_generalization = Table_Pair(T_generalization, T_prime_generalization)
-        utils.find_attribute_match(T_pair_generalization)
-        if is_record_match:
-            T_prime_generalization.update_projected_table(T_pair_generalization.RHCA)
-            T_generalization.update_projected_table(T_pair_generalization.LHCA)
-            utils.find_record_match(T_pair_generalization)
+#         T_generalization = Table(problem_set['T_generalization'])
+#         T_prime_generalization = Table(problem_set['T_prime_generalization'])
+#         T_pair_generalization = Table_Pair(T_generalization, T_prime_generalization)
+#         utils.find_attribute_match(T_pair_generalization)
+#         if is_record_match:
+#             T_prime_generalization.update_projected_table(T_pair_generalization.RHCA)
+#             T_generalization.update_projected_table(T_pair_generalization.LHCA)
+#             utils.find_record_match(T_pair_generalization)
 
-        version_counter, new_problem_set = save_as_iterative_alternative(T_pair_validation,
-                                                                         T_pair_generalization,
-                                                                         path,
-                                                                         version_counter,
-                                                                         new_problem_set)
-    pd.DataFrame(new_problem_set).to_csv(path + '/problem_sets.csv', index=False)
+#         version_counter, new_problem_set = save_as_iterative_alternative(T_pair_validation,
+#                                                                          T_pair_generalization,
+#                                                                          path,
+#                                                                          version_counter,
+#                                                                          new_problem_set)
+#     pd.DataFrame(new_problem_set).to_csv(path + '/problem_sets.csv', index=False)
 
 
 if __name__ == '__main__':
