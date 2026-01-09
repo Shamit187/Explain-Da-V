@@ -101,6 +101,7 @@ def explain_attributes_RHDA(T_pair_validation,
                             print_all_solutions=False,
                             run_only_reg=False):
     if not is_record_match:
+        # Somehow this enters here
         return explain_attributes_RHDA_no_record_match(T_pair_validation, T_pair_generalization)
     unsolved_targets = []
     attribute_solutions = pd.DataFrame(columns=['target',
@@ -112,16 +113,23 @@ def explain_attributes_RHDA(T_pair_validation,
                                                 'explainabilty_cognitive_chunks',
                                                 'time_to_generate'])
     for attribute_2_b_explained in T_pair_validation.RHDA[:-1]:
+        
         print('-----', attribute_2_b_explained,
               '(' + str(T_pair_validation.T_prime.get_attributes_names([attribute_2_b_explained])) + ') -----')
+        # done
         RHS_type = T_pair_validation.T_prime.get_attributes_types([attribute_2_b_explained])[0]
         target_task = utils.get_target_type(RHS_type)
+        
+
         if run_only_reg and target_task != 'REGRESSION':
             print('skipping (only regression)')
             continue
         solutions = {}
         if use_fd_discovery:
+            print("Functional Discovery!!!! ")
             FDs_LHS = utils.find_fd(T_pair_validation, attribute_2_b_explained)
+            print(FDs_LHS)
+            print()
         else:
             FDs_LHS = [T_pair_validation.RHCA]
         # FDs_LHS = [[0]]### REMOVE!!!
@@ -521,19 +529,25 @@ def main_with_problem_sets(use_fd_discovery=False,
                                    'explainabilty_repeated_terms',
                                    'explainabilty_cognitive_chunks',
                                    'time_to_generate'])
+    
     for i, problem_set in enumerate(problem_sets):
         print('**** Problem Set {} ****'.format(i))
         print(problem_set['Setup'])
-        if i in [52, 63, 90, 91, 92, 93]:
-            continue
-        # if i != 0:
+
+        # if i in [52, 63, 90, 91, 92, 93]:
         #     continue
-        # if i < 9:
-        #     continue
+        # # if i != 0:
+        # #     continue
+        # # if i < 9:
+        # #     continue
+
         T_validation = Table(problem_set['T_validation'])
         T_prime_validation = Table(problem_set['T_prime_validation'])
         T_pair_validation = Table_Pair(T_validation, T_prime_validation)
         is_record_match = utils.find_attribute_match(T_pair_validation)
+
+        print(is_record_match)
+
         if is_record_match:
             T_prime_validation.update_projected_table(T_pair_validation.RHCA)
             T_validation.update_projected_table(T_pair_validation.LHCA)
