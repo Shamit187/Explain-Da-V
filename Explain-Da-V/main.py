@@ -556,9 +556,9 @@ def main_with_problem_sets(use_fd_discovery=False,
         T_generalization = Table(problem_set['T_generalization'])
         T_prime_generalization = Table(problem_set['T_prime_generalization'])
         T_pair_generalization = Table_Pair(T_generalization, T_prime_generalization)
-        utils.find_attribute_match(T_pair_generalization)
+        is_record_match = utils.find_attribute_match(T_pair_generalization)
+        
         if is_record_match:
-            
             T_prime_generalization.update_projected_table(T_pair_generalization.RHCA)
             T_generalization.update_projected_table(T_pair_generalization.LHCA)
             utils.find_record_match(T_pair_generalization)

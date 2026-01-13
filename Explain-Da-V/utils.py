@@ -34,6 +34,7 @@ def find_exact_attribute_match(T_pair: Table_Pair):
     # return sigma_A_exact
 
 
+## SHAMIT: Why `is_record_match` always getting false? 
 def find_attribute_match(T_pair: Table_Pair, one_to_one=True):
     T = T_pair.T
     T_prime = T_pair.T_prime
@@ -909,7 +910,8 @@ def table_independent_row_inspection(row):
 def table_dependent_row_inspection(row, table):
     # print('--- TBI ---')
     flag = False
-    expanded_table = table.append(row)
+    row_df = row.to_frame().T
+    expanded_table = pd.concat([table, row_df], ignore_index=False)
     if expanded_table.duplicated().tolist()[-1]:
         flag = 'DUPLICATED'
         # print('The row was removed as a result of deduplication')
@@ -1023,8 +1025,12 @@ def predicate_resolution(full_rows_validation, full_table_validation,
     # print(textual_attributes_with_small_domain)
     # print(full_table_validation)
     ohe.fit(X_train_before_projection_categorial)
+    if hasattr(ohe, "get_feature_names_out"):
+        ohe_feature_names = ohe.get_feature_names_out()
+    else:
+        ohe_feature_names = ohe.get_feature_names()
     one_hot_rep = pd.DataFrame(ohe.transform(X_train_before_projection_categorial).toarray(),
-                               columns=ohe.get_feature_names())
+                               columns=ohe_feature_names)
     X_train[one_hot_rep.columns.tolist()] = one_hot_rep
     # print(one_hot_rep)
     # print(X_train)
@@ -1045,7 +1051,7 @@ def predicate_resolution(full_rows_validation, full_table_validation,
     X_test_before_projection_categorial = X_test_before_projection.iloc[:,
                                           textual_attributes_with_small_domain].astype(str)
     one_hot_rep = pd.DataFrame(ohe.transform(X_test_before_projection_categorial).toarray(),
-                               columns=ohe.get_feature_names())
+                               columns=ohe_feature_names)
     X_test[one_hot_rep.columns.tolist()] = one_hot_rep
     X_test = X_test.fillna(0)
 
@@ -1249,7 +1255,8 @@ def inspect_added_row(T_pair, added_row_to_inspect):
     start = time.time()
     orig_table = T_pair.T.projected_table
     added_row = T_pair.T_prime.projected_table.loc[added_row_to_inspect]
-    expanded_table = orig_table.append(added_row)
+    added_row_df = added_row.to_frame().T
+    expanded_table = pd.concat([orig_table, added_row_df], ignore_index=False)
     if expanded_table.duplicated().tolist()[-1]:
         sol = 'BOOTSTRAPPED'
         eval_validation = 1.0
