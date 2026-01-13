@@ -1,0 +1,90 @@
+Genre,SUM(wine.IMDB_Rating),SUM(wine.NUM_CHARACTERS(Overview)),SUM(wine.NUM_WORDS(Overview))
+"Drama, Music, Mystery",7.9,90.0,19.0
+"Action, Adventure, Sci-Fi",55.2,1165.0,205.0
+"Animation, Adventure, Comedy",55.0,1065.0,196.0
+"Comedy, Drama, Family",7.8,142.0,28.0
+"Biography, Drama, History",64.7,1332.0,235.0
+"Action, Comedy, Fantasy",7.8,147.0,25.0
+"Comedy, Drama",62.5,1164.0,189.0
+"Adventure, Drama, Sci-Fi",7.9,169.0,29.0
+"Drama, Horror, Thriller",7.7,131.0,20.0
+"Crime, Drama, Mystery",47.2,814.0,136.0
+"Drama, Musical",8.4,130.0,25.0
+Drama,118.1,2336.0,400.0
+"Comedy, Family",7.6,158.0,25.0
+"Crime, Drama, Thriller",23.2,446.0,75.0
+"Mystery, Thriller",23.1,427.0,75.0
+"Drama, Romance",63.8,1251.0,216.0
+"Adventure, Biography, Drama",7.9,79.0,12.0
+"Drama, Sci-Fi",16.1,193.0,39.0
+"Drama, Mystery, Thriller",16.5,332.0,56.0
+"Animation, Adventure, Drama",23.3,660.0,117.0
+"Animation, Adventure, Family",32.8,748.0,120.0
+"Adventure, Family, Fantasy",7.6,153.0,27.0
+"Biography, Drama, Sport",16.0,239.0,39.0
+"Crime, Drama",23.5,335.0,59.0
+"Comedy, Crime, Drama",31.4,661.0,114.0
+"Action, Crime, Drama",23.6,544.0,92.0
+"Action, Adventure, Drama",25.700000000000003,509.0,87.0
+"Biography, Drama",16.0,328.0,57.0
+"Comedy, Crime",15.9,274.0,37.0
+"Drama, Mystery, Romance",23.799999999999997,362.0,60.0
+Comedy,47.4,707.0,125.0
+"Action, Biography, Drama",15.6,364.0,65.0
+"Drama, Thriller",55.4,934.0,159.0
+"Action, Drama, Thriller",7.8,123.0,22.0
+"Animation, Action, Adventure",31.900000000000002,758.0,143.0
+"Action, Drama, Mystery",8.6,222.0,38.0
+"Drama, Music, Romance",15.899999999999999,256.0,46.0
+"Drama, War",23.7,567.0,104.0
+"Biography, Drama, War",7.9,88.0,15.0
+"Adventure, Comedy, Crime",8.1,177.0,31.0
+"Adventure, Biography, Crime",7.8,189.0,32.0
+"Adventure, History, War",7.8,145.0,26.0
+"Drama, Horror",15.7,205.0,36.0
+"Action, Adventure, Western",15.600000000000001,215.0,34.0
+"Drama, Fantasy",8.1,74.0,12.0
+"Drama, Film-Noir",8.1,224.0,35.0
+"Action, Sci-Fi, Thriller",8.1,133.0,24.0
+"Comedy, Romance",8.1,60.0,13.0
+"Biography, Drama, Thriller",15.5,347.0,60.0
+"Comedy, Drama, Music",8.0,148.0,24.0
+"Drama, Mystery, Sci-Fi",15.9,424.0,71.0
+"Crime, Drama, Film-Noir",8.0,204.0,39.0
+"Biography, Crime, Drama",15.8,328.0,55.0
+"Action, Drama, Western",8.0,169.0,33.0
+"Drama, Sci-Fi, Thriller",15.3,369.0,60.0
+"Action, Adventure",25.0,582.0,96.0
+"Comedy, Drama, Thriller",7.7,125.0,21.0
+"Drama, Horror, Sci-Fi",15.5,258.0,40.0
+"Comedy, Drama, War",16.1,278.0,45.0
+"Biography, Drama, Music",15.5,377.0,65.0
+"Mystery, Sci-Fi, Thriller",7.6,146.0,28.0
+"Action, Biography, Crime",7.6,221.0,41.0
+"Crime, Drama, Music",8.3,137.0,25.0
+"Drama, Music, Musical",15.7,265.0,43.0
+"Action, Comedy, Crime",8.1,138.0,24.0
+"Adventure, Drama, Western",7.8,153.0,26.0
+"Drama, Film-Noir, Romance",7.9,129.0,27.0
+"Drama, History, Romance",16.2,260.0,44.0
+"Comedy, Drama, Romance",7.6,145.0,27.0
+"Comedy, Musical, Romance",8.3,79.0,13.0
+"Crime, Drama, Fantasy",8.6,147.0,29.0
+"Action, Sci-Fi",8.5,152.0,27.0
+"Adventure, Drama, Musical",8.1,127.0,22.0
+"Adventure, Drama, History",8.1,123.0,20.0
+"Action, Adventure, Mystery",7.6,151.0,28.0
+"Fantasy, Horror, Mystery",8.1,70.0,10.0
+"Animation, Drama, Fantasy",7.8,111.0,18.0
+"Biography, Drama, Family",15.8,244.0,44.0
+"Drama, History, Thriller",8.0,228.0,36.0
+"Film-Noir, Mystery, Thriller",8.1,149.0,23.0
+"Adventure, Comedy, Drama",15.799999999999999,186.0,35.0
+"Animation, Biography, Drama",7.8,103.0,19.0
+"Drama, Fantasy, Music",7.8,173.0,27.0
+"Adventure, Drama, Thriller",16.3,192.0,31.0
+"Crime, Drama, Romance",8.0,108.0,19.0
+"Adventure, Drama, Fantasy",8.0,85.0,15.0
+"Horror, Mystery, Thriller",7.6,131.0,22.0
+"Drama, Romance, Thriller",8.1,110.0,22.0
+"Comedy, Drama, Fantasy",8.1,76.0,14.0
