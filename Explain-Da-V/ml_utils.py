@@ -188,6 +188,19 @@ def get_explainabilty_classification(clf):
     return eval_explainabilty_size, eval_explainabilty_repeated_terms, eval_explainabilty_cognitive_chunks
 
 
+def compute_relative_score(y_true, y_pred):
+    y_true = np.array(y_true, dtype=float)
+    y_pred = np.array(y_pred, dtype=float)
+    if y_true.size == 0:
+        return 0.0
+    denom = np.where(y_true == 0, 1.0, np.abs(y_true))
+    rel = np.abs(y_pred - y_true) / denom
+    rel = np.where(rel > 1, 1.0, rel)
+    rel = np.nan_to_num(rel, nan=0.0, posinf=0.0, neginf=0.0)
+    return 1.0 - float(np.mean(rel))
+
+
+
 def learn_data_transformation_BINARY_CLASSIFICATION(X_train, y_train, X_test, y_test, applied_over_rows=False):
     # clf = svm.SVC(kernel='linear')
     # clf = LogisticRegression()
@@ -201,8 +214,10 @@ def learn_data_transformation_BINARY_CLASSIFICATION(X_train, y_train, X_test, y_
     formula = get_formula_tree_model(clf, X_train, y_train)
     eval_explainabilty = get_explainabilty_classification(clf)
     # eval_simplicity = 1.0
-    eval_validation = clf.score(X_train, y_train)
-    eval_generalization = clf.score(X_test, y_test)
+    # eval_validation = clf.score(X_train, y_train)
+    # eval_generalization = clf.score(X_test, y_test)
+    eval_validation = compute_relative_score(y_train, clf.predict(X_train))
+    eval_generalization = compute_relative_score(y_test, clf.predict(X_test))
     if applied_over_rows:
         validation_labels = dict(zip(X_train.index, clf.predict(X_train)))
         generalization_labels = dict(zip(X_test.index, clf.predict(X_test)))
@@ -233,9 +248,11 @@ def learn_data_transformation_MULTICLASS_CLASSIFICATION(X_train, y_train, X_test
     eval_explainabilty = get_explainabilty_classification(clf)
     formula = get_formula_tree_model(clf, X_train, y_train)
     # eval_simplicity = 1.0
-    eval_validation = clf.score(X_train, y_train)
+    # eval_validation = clf.score(X_train, y_train)
+    eval_validation = compute_relative_score(y_train, clf.predict(X_train))
     try:
-        eval_generalization = clf.score(X_test, y_test)
+        # eval_generalization = clf.score(X_test, y_test)
+        eval_generalization = compute_relative_score(y_test, clf.predict(X_test))
     except:
         eval_generalization = 0.0
     run_time = time.time() - start
@@ -278,15 +295,22 @@ def get_explainabilty_regression(regr, formula):
 
 
 def compute_score(X, y, regr):
-    eval_validation = 0
+    # eval_validation = 0
+    # try:
+    #     eval_validation = regr.score(X, y)
+    # except Exception as err:
+    #     if 'Input contains NaN, infinity or a value too large' in str(err):
+    #         return 0
+    # if eval_validation < 0:
+    #     eval_validation = 0
+    # return eval_validation
     try:
-        eval_validation = regr.score(X, y)
+        y_pred = regr.predict(X)
     except Exception as err:
         if 'Input contains NaN, infinity or a value too large' in str(err):
             return 0
-    if eval_validation < 0:
-        eval_validation = 0
-    return eval_validation
+        return 0
+    return compute_relative_score(y, y_pred)
 
 
 def learn_data_transformation_REGRESSION_step(X_train,
