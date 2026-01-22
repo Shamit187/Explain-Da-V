@@ -1,6 +1,6 @@
 # LH_table_file = 'Data/winemag_sample.csv'
 # problem_sets_file = 'Data/Benchmark/problem_sets.csv'
-dataset_name = 'PSID'
+dataset_name = 'FIFA'
 problem_sets_file = 'Data/Benchmark/{}/problem_sets.csv'.format(dataset_name)
 test_size_for_cv = 0.2
 foofah_time_limit = 10
